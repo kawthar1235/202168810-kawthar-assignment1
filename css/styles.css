@@ -4,7 +4,7 @@
   --text: #eaf0ff;
   --muted: rgba(234,240,255,.72);
   --border: rgba(255,255,255,.12);
-  --accent: #7c9cff;
+  --accent: #f99fe2;
   --shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
@@ -14,7 +14,7 @@ html[data-theme="light"]{
   --text: #111827;
   --muted: rgba(17,24,39,.72);
   --border: rgba(0,0,0,.12);
-  --accent: hsl(221, 83%, 53%);
+  --accent: #f99fe2;
   --shadow: 0 10px 30px rgba(0,0,0,.10);
 }
 
@@ -51,10 +51,25 @@ a:hover{ text-decoration: underline; }
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(10px);
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(12px);
+
+  background: linear-gradient(
+    120deg,
+    rgba(249,159,226,0.35),
+    rgba(255,209,102,0.35)
+  );
+
+  border-bottom: 1px solid rgba(255,255,255,0.25);
 }
+#themeToggle{
+  background: white;
+  color: #111;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+}
+
+
 
 .header-inner{
   display: flex;
@@ -116,7 +131,7 @@ a:hover{ text-decoration: underline; }
 .btn:hover{ box-shadow: var(--shadow); text-decoration: none; }
 
 .btn.primary {
-  background: linear-gradient(120deg, #3A86FF, #FFD166);
+  background: linear-gradient(120deg, #f99fe2, #FFD166);
   color: white;
   border: none;
 }
@@ -136,7 +151,8 @@ a:hover{ text-decoration: underline; }
 .muted{ color: var(--muted); }
 .small{ font-size: 14px; }
 
-.hero{ padding: 140px 0 90px; }
+.hero{
+  padding: 40px 0 40px;}
 
 /* Grid */
 .hero-grid{
@@ -338,4 +354,36 @@ input:focus, textarea:focus{
   border-radius: 14px;
   box-shadow: none;
   background: transparent;
+}
+
+/* ===== Mouse Gradient Glow — Whole Page ===== */
+
+body{
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before{
+  content: "";
+  position: fixed;
+  inset: -100px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .50;
+
+  background:
+    radial-gradient(
+      900px circle at var(--mx, 50%) var(--my, 40%),
+      rgba(252, 156, 255, 0.35),
+      rgba(250, 204, 96, 0.25) 35%,
+      transparent 65%
+    );
+
+  filter: blur(18px);
+}
+
+/* نخلي كل المحتوى فوق طبقة الألوان */
+body > *{
+  position: relative;
+  z-index: 1;
 }
