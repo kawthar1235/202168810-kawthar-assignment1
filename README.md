@@ -16,7 +16,7 @@ The site includes three main sections: **About Me**, **Projects**, and **Contact
 ## Setup Instructions (Run Locally)
 1. Download or clone the repository:
    - Click **Code → Download ZIP** and extract it, OR:
-   - `git clone (your-repo-link)`
+
 2. Open the project folder.
 3. Run the website:
    - Option A: Open `index.html` directly in your browser.
@@ -33,9 +33,9 @@ Examples of AI assistance:
 - Debugging JavaScript interactions
 - Improving wording for the bio/about sections
 
-## Live Deployment (Optional)
-GitHub Pages: (put your link here after publishing)
+## Live Deployment 
 - https://kawthar1235.github.io/202168810-kawthar-assignment1
 
 ## Author
 - **Kawthar Alkhawajah**
+
